@@ -1,8 +1,4 @@
-=begin exercise 34
-numbers = []
-(1..100).each { |x| numbers << x}
-
-numbers.each do |testnum|
+(1..100).each do |testnum|
 	if (testnum % 3 == 0 && testnum % 5 == 0)
 		puts "FizzBuzz"
 	elsif (testnum % 3 == 0)
@@ -13,6 +9,3 @@ numbers.each do |testnum|
 		puts testnum
 	end
 end
-=end
-
-			
