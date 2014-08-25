@@ -47,7 +47,7 @@ class Recipe
 		puts "Recipe: #{title}"
 		puts "Ingredients: #{ingredients.join(", ")}"
 		puts "Instructions:"
-		steps.each { |x| puts (steps.index(x) + 1).to_s + " " + x.capitalize }
+		steps.each { |x| puts (steps.index(x) + 1).to_s + " " + x.capitalize }#each_with_index
 	end
 
 	def low_fat
