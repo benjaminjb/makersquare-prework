@@ -171,6 +171,7 @@ class Bank
 	end
 end
 
+# tests of basic functionality
 chase = Bank.new("JP Morgan Chase")
 wells_fargo = Bank.new("Wells Fargo")
 me = Person.new("Shehzan", 500)
@@ -200,6 +201,7 @@ puts wells_fargo.total_cash_in_bank
 # wells_fargo.open_account(test)
 # chase.transfer(test, wells_fargo, 1000)
 
+# tests of extension functionality
 chase.open_credit_account(me)
 chase.check_credit(me)
 chase.pay_with_plastic(me,50)

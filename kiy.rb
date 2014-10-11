@@ -1,3 +1,5 @@
+# a skeleton exercise for a humorous King in Yellow choose-your-own-adventure
+
 class Player
 	
 	def set_up
