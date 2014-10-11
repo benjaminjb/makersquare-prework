@@ -1,0 +1,58 @@
+<html>
+
+<head>
+  <title>Javascript Functions</title>
+  <style type="text/css">
+    .spacer {
+      height: 2500px;
+    }
+    #box {
+      display: none;
+    }
+  </style>
+</head>
+
+<body>
+  
+  <div class="spacer">
+    Scroll down (all the way down)
+  </div>
+
+  <p>
+    <p><label>Clicks: <span id="total">0</span></label></p>
+    You see a box.
+    <a id="open-link" href="#">Open the box</a>
+  </p>
+
+  <p id="box">Surprise! <a id="close-link" href="#">Close Box</a></p> 
+
+  <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+  <script type="text/javascript">
+    //opens the box
+    $('#open-link').on('click', function (e) {
+      e.preventDefault();
+      $('#box').show();
+    });
+    //closes the box
+    $('#close-link').on('click', function (e) {
+      e.preventDefault();
+      $('#box').hide();
+    });
+    //counts and displays the times the open/close has been clicked
+    $('#close-link,#open-link').on('click', function (e) {
+      e.preventDefault();
+      var number = parseInt($('#total').text(),10);
+      number = number + 1;
+      //last line triggers new high score listener
+      $('#total').text(number).trigger('new-click-count',number);  
+    });
+    //alerts new high score number
+    $('#total').on('new-click-count',function (e,clicks) {
+      e.preventDefault();
+      if (clicks%5===0) {
+        alert("New High Score: "+clicks+"!");
+      };
+    });
+  </script>
+</body>
+</html>
